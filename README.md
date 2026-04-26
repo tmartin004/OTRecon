@@ -2,7 +2,7 @@
 
 ## Overview
 
-`pcap_ot_hosts.py` is a passive PCAP parser for host discovery and common OT/ICS
+`OTRecon` is a passive PCAP parser for host discovery and common OT/ICS
 traffic identification. It reads an existing `.pcap` or `.pcapng` file and reports
 observed hosts, MAC addresses, conversations, ports, likely vendors, OT protocols,
 and basic asset role hints.
@@ -59,19 +59,19 @@ pip install scapy
 ## Basic Usage
 
 ```bash
-python3 pcap_ot_hosts.py capture.pcap
+python3 otrecon.py capture.pcap
 ```
 
 Enable reverse DNS lookups:
 
 ```bash
-python3 pcap_ot_hosts.py capture.pcap --dns
+python3 otrecon.pyy capture.pcap --dns
 ```
 
 Limit printed OT findings and conversations:
 
 ```bash
-python3 pcap_ot_hosts.py capture.pcap --top 50
+python3 otrecon.py capture.pcap --top 50
 ```
 
 ## Export Options
@@ -79,13 +79,13 @@ python3 pcap_ot_hosts.py capture.pcap --top 50
 Export full results to JSON:
 
 ```bash
-python3 pcap_ot_hosts.py capture.pcap --json results.json
+python3 otrecon.py capture.pcap --json results.json
 ```
 
 Export CSV files:
 
 ```bash
-python3 pcap_ot_hosts.py capture.pcap --csv-prefix results
+python3 otrecon.py capture.pcap --csv-prefix results
 ```
 
 This creates:
@@ -99,7 +99,7 @@ results_ot_findings.csv
 Use both JSON and CSV:
 
 ```bash
-python3 pcap_ot_hosts.py capture.pcap --json results.json --csv-prefix results
+python3 otrecon.py capture.pcap --json results.json --csv-prefix results
 ```
 
 ## Demo PCAP
@@ -113,7 +113,7 @@ sample_ot_demo.pcap
 You can run:
 
 ```bash
-python3 pcap_ot_hosts.py sample_ot_demo.pcap --json demo_results.json --csv-prefix demo_results
+python3 otrecon.py sample_ot_demo.pcap --json demo_results.json --csv-prefix demo_results
 ```
 
 You can also regenerate the sample PCAP:
